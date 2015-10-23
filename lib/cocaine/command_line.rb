@@ -73,6 +73,7 @@ module Cocaine
         full_command = command(interpolations)
         log("#{colored("Command")} :: #{full_command}")
         output = execute(full_command)
+        log("[cocaine] Output: #{output}")
       rescue Errno::ENOENT => e
         raise Cocaine::CommandNotFoundError, e.message
       ensure
